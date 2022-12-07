@@ -115,6 +115,63 @@ a:hover{text-decoration: none; cursor:pointer;}
 }
 
 
+/* Background Styles */
+
+.bg-center,.bg-l-edge,.bg-r-edge,.bg-t-edge,.bg-b-edge,.bg-tl-edge,.bg-bl-edge,.bg-tr-edge,.bg-br-edge,.bg-repeat{
+	-webkit-background-size: auto!important;
+	-moz-background-size: auto!important;
+	-o-background-size: auto!important;
+	background-size: auto!important;
+}
+
+
+/* Video Background Styles */
+
+.video-bg-container, .bloc-video{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	right: -50%;
+	overflow: hidden;
+	transform: translateX(-50%);
+	-webkit-transform:translateX(-50%);
+}
+.bloc-video, .video-bg-container iframe{
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: 0;
+}
+
+
+/* Background Effects */
+
+.parallax__container {
+	clip: rect(0, auto, auto, 0);
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index:-1;
+}
+.parallax {
+	position: fixed;
+	top: 0;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
 /* Dark theme */
 
 .d-bloc{
@@ -196,8 +253,8 @@ a:hover{text-decoration: none; cursor:pointer;}
 
 /* Row Margin Offsets */
 
-.voffset-md{
-	margin-top:50px;
+.voffset{
+	margin-top:30px;
 }
 .voffset-lg{
 	margin-top:80px;
@@ -238,9 +295,17 @@ a:hover{text-decoration: none; cursor:pointer;}
 /* = Bric adjustment margins
 -------------------------------------------------------------- */
 
+.mg-sm{
+	margin-top:10px;
+	margin-bottom:5px;
+}
 .mg-md{
 	margin-top:10px;
 	margin-bottom:20px;
+}
+.mg-lg{
+	margin-top:10px;
+	margin-bottom:40px;
 }
 
 /* = Buttons
@@ -265,10 +330,33 @@ button{
 	text-align:center;
 }
 
+/* = Icons
+-------------------------------------------------------------- */
+.icon-md{
+	font-size:30px!important;
+}
+.icon-round{
+	margin:0 auto;
+	border:2px solid transparent;
+	border-radius: 50%;
+	padding: 32px 30px 26px 30px;
+	min-width:80px;
+}
+.icon-round.icon-md,.icon-square.icon-md,.icon-rounded.icon-md{
+	min-width: 92px;
+}
+.icon-round.icon-lg,.icon-square.icon-lg,.icon-rounded.icon-lg{
+	min-width: 122px;
+}
+.icon-round.icon-xl,.icon-square.icon-xl,.icon-rounded.icon-xl{
+	min-width: 162px;
+}
 
 
 
 
+/* = Cards
+-------------------------------------------------------------- */
 .card-sq, .card-sq .card-header, .card-sq .card-footer{
 	border-radius:0;
 }
@@ -284,6 +372,10 @@ button{
 
 
 
+/* Scroll FX */
+.scroll-fx-in-range{
+	will-change: opacity;
+}
 
 
 /* ScrollToTop button */
@@ -331,13 +423,25 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	font-family:"Oswald";
 }
 .bloc-divider-b-fill{
-	fill:#FEFFFF;
+	fill:#ECCEAA;
+	height:70px;
 }
 .bloc-divider-t-fill{
-	fill:#FEFFFF;
+	fill:#ECCEAA;
 }
 .row-style{
 	width:100%;
+}
+.team-card{
+	min-height:350px;
+}
+.img-style{
+	width:513px;
+	border-radius:0px 0px 0px 0px;
+}
+.bloc-divider-t-style{
+	height:30px;
+	fill:#ECCEAA;
 }
 
 /* = Colour
@@ -345,8 +449,32 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 
 /* Background colour styles */
 
+.bgc-desert-sand{
+	background-color:#EDCFAB;
+}
+.bgc-dark-cerulean{
+	background-color:#074188;
+}
 .bgc-black{
 	background-color:#000000;
+}
+
+/* Text colour styles */
+
+.tc-white{
+	color:#FFFFFF!important;
+}
+.tc-dark-cerulean{
+	color:#074188!important;
+}
+
+/* Link colour styles */
+
+.ltc-dark-cerulean{
+	color:#074188!important;
+}
+.ltc-dark-cerulean:hover{
+	color:#06346d!important;
 }
 
 /* Bloc image backgrounds */
@@ -432,16 +560,6 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	   height: 320px;
     }
 }
-
-@media (max-width: 991px){
-	
-	/* MD Row Margin Offsets */
-	.voffset-md{
-		margin-top:30px;
-	}
-	
-}
-
 @media (max-width: 575px){
 	.footer-link{
 		text-align:center;
